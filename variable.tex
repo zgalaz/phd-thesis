@@ -1,0 +1,135 @@
+%% Nastavení jazyka~přI~sazbě.
+% Pro sazbu češtiny je použit mezinárodní balíček 'babel', použití
+% národního balíčku 'czech', ve spojení s programy 'cslatex' a
+% 'pdfcslatex' není od verze 3.0 podporován a~nedoporučujeme ho.
+\usepackage[
+%%Nastavení balíčku babel (!!! prI~zmene jazyka~je potreba~zkompilovat dvakrat !!!)
+  %main=czech,english       % originální jazyk je čeština~(výchozí), překlad je anglicky
+  %main=slovak,english      % originální jazyk je slovenčina, překlad je anglicky
+	%main=english,czech       % originální jazyk je angličtina, překlad je česky
+	czech,english
+]{babel}    					% Balíček pro sazbu různojazyčných dokumentů; kompilovat (pdf)latexem!
+
+\usepackage{lmodern}	% vektorové fonty Latin Modern, nástupce půvoních Knuthových Computern Modern fontů
+\usepackage{textcomp} % Dodatečné symboly
+\usepackage[LGR,T1]{fontenc}  % Kódování fontu -- mj. kvůlI~správným vzorům pro dělení slov
+
+\usepackage[
+%% Z následujících voleb lze použít pouze jednu
+  %semestral,					%	sazba~zprávy semestrálního projektu (nesází se abstrakty, prohlášení, poděkování)
+  %bachelor,					%	sazba~bakalářské práce
+  %diploma,						% sazba~diplomové práce
+  %treatise,          % sazba~pojednání o dizertační práci
+  phd,               % sazba~dizertační práce
+%% Z následujících voleb lze použít pouze jednu
+% left,               % Rovnice a~popisky plovoucich objektů budou %zarovnány vlevo
+  center,             % Rovnice a~popisky plovoucich objektů budou zarovnány na~střed (vychozi)
+]{thesis}   % Balíček pro sazbu studentských prací
+                      % Musí být vložen až jako poslední, aby
+                      % ostatní balíčky nepřepisovaly jeho příkazy
+
+
+%% Jméno a~příjmení autora~ve tvaru
+%  [tituly před jménem]{Křestní}{Příjmení}[tituly za~jménem]
+\autor[Ing.]{Zoltán}{Galáž}
+
+
+%% Pohlaví autora/autorky
+% Číselná hodnota: 1...žena, 0...muž
+\autorpohlavi{0}
+
+%% Jméno a~příjmení vedoucího/školitele včetně titulů
+%  [tituly před jménem]{Křestní}{Příjmení}[tituly za~jménem]
+% Pokud osoba~nemá titul za~jménem, smažte celý řetězec '[...]'
+\vedouci[Ing.]{Jiří}{Mekyska}[Ph.D.]
+
+%% Jméno a~příjmení oponenta~včetně titulů
+%  [tituly před jménem]{Křestní}{Příjmení}[tituly za~jménem]
+% Pokud nemá titul za~jménem, smažte celý řetězec '[...]'
+% Uplatní se pouze v prezentacI~k obhajobě;
+% v případě, že nechcete, aby se na~titulním snímku prezentace zobrazoval oponent, pouze příkaz zakomentujte;
+% u obhajoby semestrální práce se oponent nezobrazuje
+\oponent[doc.\ Mgr.]{Křestní}{Příjmení}[Ph.D.]
+
+%% Název práce:
+%  První parametr je název v originálním jazyce,
+%  druhý je překlad v angličtině nebo češtině (pokud je originální jazyk angličtina)
+\nazev{Analysis of motor and non-motor deficits in patients with Parkinson’s disease based on the acoustic analysis of dysarthric speech}{Analýza~motorických a~nemotorických deficitů u pacientů s Parkinsonovou nemocí na~základě akustické analýzy dysartrické řeči}
+
+%% Označení oboru studia
+% První parametr je obor v originálním jazyce,
+% druhý parametr je překlad v angličtině nebo češtině
+\oborstudia{Teleinformatics}{Teleinformatika}
+
+%% Označení ústavu
+% První parametr je název ústavu v originálním jazyce,
+% druhý parametr je překlad v angličtině nebo češtině
+%\ustav{Ústav automatizace a~měřicí techniky}{Department of Control and Instrumentation}
+%\ustav{Ústav biomedicínského inženýrství}{Department of Biomedical Engineering}
+%\ustav{Ústav elektroenergetiky}{Department of Electrical Power Engineering}
+%\ustav{Ústav elektrotechnologie}{Department of Electrical and Electronic Technology}
+%\ustav{Ústav fyziky}{Department of Physics}
+%\ustav{Ústav jazyků}{Department of Foreign Languages}
+%\ustav{Ústav matematiky}{Department of Mathematics}
+%\ustav{Ústav mikroelektroniky}{Department of Microelectronics}
+%\ustav{Ústav radioelektroniky}{Department of Radio Electronics}
+%\ustav{Ústav teoretické a~experimentální elektrotechniky}{Department of Theoretical and Experimental Electrical Engineering}
+\ustav{Department of Telecommunications}{Ústav telekomunikací}
+%\ustav{Ústav výkonové elektrotechniky a~elektroniky}{Department of Power Electrical and Electronic Engineering}
+
+%% Označení fakulty
+% První parametr je název fakulty v originálním jazyce,
+% druhý parametr je překlad v angličtině nebo v češtině
+%\fakulta{Fakulta~architektury}{Faculty of Architecture}
+\fakulta{Faculty of Electrical Engineering and~Communication}{Fakulta~elektrotechniky a~komunikačních technologií}
+%\fakulta{Fakulta~chemická}{Faculty of Chemistry}
+%\fakulta{Fakulta~informačních technologií}{Faculty of Information Technology}
+%\fakulta{Fakulta~podnikatelská}{Faculty of Business and Management}
+%\fakulta{Fakulta~stavební}{Faculty of Civil Engineering}
+%\fakulta{Fakulta~strojního inženýrství}{Faculty of Mechanical Engineering}
+%\fakulta{Fakulta~výtvarných umění}{Faculty of Fine Arts}
+
+\logofakulta[loga/FEKT_zkratka_barevne_PANTONE_CZ]{loga/UTKO_color_PANTONE_CZ}
+
+
+%% Rok obhajoby
+\rok{Rok}
+\datum{1.\,1.\,1970} % Datum se uplatní pouze v prezentacI~k obhajobě
+
+%% Místo obhajoby
+% Na~titulních stránkách bude automaticky vysázeno VELKÝMI~písmeny
+\misto{Brno}
+
+%% Abstrakt
+\abstrakt{%
+Hypokinetic dysarthria (HD) is a~speech disorder occurring in up to $90$\,\% of patients suffering from idiopathic Parkinson's disease (PD) that significantly contributes to unnaturalness and incomprehensibility of speech of these patients. The main aim of this doctoral thesis is to investigate possibilities of using quantitative para-clinical analysis of HD, employing speech parametrization, statistical analyses, and machine learning techniques, for diagnosis and remote objective assessment of PD. This thesis demonstrates that it is possible to use computerized acoustic analysis to sufficiently describe HD, especially dysprosody, which is characterized by flat speech melody and unnatural speech rate. Moreover, it demonstrates it is also possible to use robust clinically interpretable acoustic parameters quantifying various manifestations of HD, such as phonation, articulation, and prosody, to assess the severity of motor and non-motor symptoms of PD. Next, it presents the investigation of pathophysiological mechanisms shared by HD and freezing of gait in PD. And finally, it proves it is also possible to accurately estimate the change in gait-related deficits in the horizon of two years using acoustic analysis at the baseline.
+}{%
+Hypokinetická dysartrie (HD) je častým symptomem vyskytujícím se až u~$90$\,\% pacientů trpících idiopatickou Parkinsonovou nemocí (PN), která výrazně přispívá k~nepřirozenosti a~nesrozumitelnosti řeči těchto pacientů. Hlavním cílem této disertační práce je prozkoumat možnosti použití kvantitativní paraklinické analýzy HD, s~použitím parametrizace řeči, statistického zpracování a~strojového učení, za účelem diagnózy a~objektivního hodnocení PN. Tato práce dokazuje, že počítačová akustická analýza je schopná dostatečně popsat HD, speciálně tzv. dysprozodii, která se projevuje nedokonalou intonací a~nepřirozeným tempem řeči. Navíc také dokazuje, že použití klinicky interpretovatelných akustických parametrů kvantifikujících různé aspekty HD, jako jsou fonace, artikulace a~prozodie, může být použito k~objektivnímu posouzení závažnosti motorických a~nemotorických symptomů vyskytujících se u~pacientů s~PN. Dále tato práce prezentuje výzkum společných patofyziologických mechanizmů stojících za HD a~zárazy v~chůzi při PN. Nakonec tato práce dokazuje, že akustická analýza HD může být použita pro odhad progrese zárazů v~chůzi v~horizontu dvou let.
+}
+
+%% Klíčová slova
+\klicovaslova{%
+Parkinson's disease, hypokinetic dysarthria, acoustic analysis, diagnosis, freezing of gait, machine learning, motor symptoms, non-motor symptoms, objective assessment, quantitative analysis, statistical processing.
+}{%
+Parkinsonova nemoc, hypokinetická dysartrie, akustická analýza, diagnóza, kvantitativní analýza, motorické příznaky, nemotorické příznaky, objektivní hodnocení, statistické zpracování, strojové učení, zárazy v chůzi.
+}
+
+%% Poděkování
+\podekovanitext{%
+The research work described herein has been conducted at Department of Telecommunications, Faculty of Electrical Engineering and Communication, Brno University of Technology over the years $2014$--$2018$. This work is to the best of my knowledge original, and neither this nor substantially similar doctoral thesis has been submitted at any other university. As financial stability is fundamental for all researchers, I~would like to acknowledge the generous support received from grants of Brno University of Technology which allowed me to pursue Ph.D. study.
+\medskip
+
+I~would like to express my deepest gratitude to my supervisor Ing. Ji\v{r}\'{i} Mekyska, Ph.D. for his guidance through my Ph.D. study. I~own my deepest respect to Ing. Ji\v{r}\'{i} Mekyska, Ph.D. for his constant support while inspiring and motivating me through many aspects of my life. Ing. Ji\v{r}\'{i} Mekyska, Ph.D. is an absolute professional, great friend, and exceptional supervisor that is always willing to share his highly valuable opinion, and provide help with anything that might come in the way.
+\medskip
+
+I~would also like to express my deepest gratitude to exceptional researchers who I~have had an honour to work with during my studies, and who did influence my professional career: (i) Prof. Zden\v{e}k Sm\'{e}kal (Brno University of Technology), (ii) Prof. Irena~Rektorov\'{a} (Masaryk University), (iii) Prof. Pedro G\'{o}mez-Vilda (Universidad Polit\'{e}cnica~de Madrid), (iv) Prof. Jes\'{u}s B.~Alonso-Hern\'{a}ndez (Universidad de Las Palmas de Gran Canaria), and (v) Dr. Steven Z.~Rapcsak (University of Arizona).
+\medskip
+
+I~would also like to express my sincerest thanks to all my colleagues and friends for creating a~professional and positively-charged environment throughout my studies. This includes, among others (in alphabetical order according to the second name), Radim Burget, Radek Fujdiak, Pavol Har\'{a}r, Tom\'{a}\v{s} Horv\'{a}th, Tom\'{a}\v{s} Kiska, Marie Mangov\'{a}, J\'{a}n Mucha, Zden\v{e}k M\v{z}ourek, Ji\v{r}\'{i} P\v{r}inosil, and Vojt\v{e}ch Zvon\v{c}\'{a}k.
+\medskip
+
+Finally, and most importantly, I~would like to take this opportunity to express my heartfelt gratitude to my family for their understanding and support during my studies. I~am especially grateful to my wife Krist\'{i}na, who has always been there for me, at any time, in any place, and in any situation. Her never-ending support and help gave me the time and space to become who I~am today. I~am also indebted to my parents for giving me the opportunities and experiences needed to take courage and explore new directions in my life as a~researcher.
+}%
+
+% Zrušení sazby poděkování projektu SIX, pokud není nutné
+%\renewcommand\vytvorpodekovaniSIX\relax
